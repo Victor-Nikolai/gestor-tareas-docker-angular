@@ -1,0 +1,15 @@
+services:
+  angular-app:
+    build: .
+    container_name: gestor_tareas_angular
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - NG_CLI_ANALYTICS=false
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
